@@ -3,9 +3,11 @@ import { tailwindcssPlugin } from '@modern-js/plugin-tailwindcss';
 
 // https://modernjs.dev/en/configure/app/usage
 export default defineConfig<'rspack'>({
+  dev: {
+    port: 8501,
+  },
   runtime: {
     router: true,
-    port: 8501,
   },
   plugins: [
     appTools({
