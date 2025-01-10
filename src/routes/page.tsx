@@ -6,6 +6,7 @@ const Index = () => {
   const [timer, setTimer] = useState(60);
   const timerIndexRef = useRef(0);
   const emoji = emojiList[index];
+  const token = useRef(localStorage.getItem('emoji-token') || '');
 
   const interval = (timer: number, timerIndex: number) => {
     setTimer(timer);
@@ -27,6 +28,9 @@ const Index = () => {
         mode: 'no-cors',
       },
     });
+  }
+  if (!token.current) {
+    return null;
   }
   return (
     <div className="text-xs flex items-center flex-col mt-200">
