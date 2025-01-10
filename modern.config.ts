@@ -5,6 +5,7 @@ import { tailwindcssPlugin } from '@modern-js/plugin-tailwindcss';
 export default defineConfig<'rspack'>({
   runtime: {
     router: true,
+    port: 8501,
   },
   plugins: [
     appTools({

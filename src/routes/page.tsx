@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import './index.css';
 import { emojiList } from '@/assets/emoji';
 
 const Index = () => {
@@ -20,14 +19,14 @@ const Index = () => {
       interval(timer - 1, timerIndex);
     }, 1000);
   };
-  async function update(result: string) {
+  async function update(answer: string) {
     interval(60, ++timerIndexRef.current);
-    fetch(
-      `https://ne3wv131xx.us.aircode.run/updateResult?key=YWlyd2FsbGV4&result=${result}`,
-      {
-        method: 'GET',
+    fetch(`http://www.w23kg7.top:8899/update?answer=${answer}`, {
+      method: 'GET',
+      headers: {
+        mode: 'no-cors',
       },
-    );
+    });
   }
   return (
     <div className="text-xs flex items-center flex-col mt-200">
